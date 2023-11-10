@@ -52,12 +52,17 @@
             // 
             // dgvPrikaz
             // 
+            this.dgvPrikaz.AllowUserToAddRows = false;
+            this.dgvPrikaz.AllowUserToDeleteRows = false;
             this.dgvPrikaz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPrikaz.Location = new System.Drawing.Point(3, 16);
+            this.dgvPrikaz.MultiSelect = false;
             this.dgvPrikaz.Name = "dgvPrikaz";
             this.dgvPrikaz.Size = new System.Drawing.Size(794, 306);
             this.dgvPrikaz.TabIndex = 0;
+            this.dgvPrikaz.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvPrikaz_CellBeginEdit);
+            this.dgvPrikaz.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrikaz_CellEndEdit);
             // 
             // groupBox2
             // 
@@ -80,6 +85,7 @@
             this.btnDodajRed.TabIndex = 2;
             this.btnDodajRed.Text = "Dodaj red";
             this.btnDodajRed.UseVisualStyleBackColor = true;
+            this.btnDodajRed.Click += new System.EventHandler(this.btnDodajred_Click);
             // 
             // btnObrisiRed
             // 
@@ -89,6 +95,7 @@
             this.btnObrisiRed.TabIndex = 1;
             this.btnObrisiRed.Text = "Obriši red";
             this.btnObrisiRed.UseVisualStyleBackColor = true;
+            this.btnObrisiRed.Click += new System.EventHandler(this.btnObrisiRed_Click);
             // 
             // btnSinhronizuj
             // 

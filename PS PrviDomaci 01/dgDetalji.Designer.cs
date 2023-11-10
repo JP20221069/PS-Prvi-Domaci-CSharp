@@ -126,6 +126,7 @@
             this.Name = "dgDetalji";
             this.ShowIcon = false;
             this.Text = "dgDetalji";
+            this.Load += new System.EventHandler(this.dgDetalji_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -25,11 +25,20 @@ namespace PS_PrviDomaci_01
         {
             zvanja = Data.VratiZvanja();
             zvanja.Insert(0, new Zvanje());
-            txtIme.Text = nastavnik.Ime;
-            txtPrezime.Text = nastavnik.Prezime;
+            cbZvanje.DataSource = zvanja;
             cbZvanje.DataSource = zvanja;
             cbZvanje.DisplayMember = "Naziv";
-            cbZvanje.SelectedIndex = zvanja.IndexOf(nastavnik.Zvanje);
+            if (nastavnik != null)
+            {
+                txtIme.Text = nastavnik.Ime;
+                txtPrezime.Text = nastavnik.Prezime;
+                cbZvanje.SelectedIndex = zvanja.IndexOf(nastavnik.Zvanje);
+            }
+            else
+            {
+                nastavnik = new Nastavnik();
+                cbZvanje.SelectedIndex = 0;
+            }
             if (dozvoliedit)
             {
                 txtIme.Enabled = true;
@@ -48,7 +57,7 @@ namespace PS_PrviDomaci_01
         {
             if (string.IsNullOrEmpty(txtIme.Text)) return false;
             if (string.IsNullOrEmpty(txtPrezime.Text)) return false;
-            if (string.IsNullOrEmpty(cbZvanje.SelectedText)) return false;
+            if (string.IsNullOrEmpty(((Zvanje)cbZvanje.Items[cbZvanje.SelectedIndex]).Naziv)) return false;
             return true;
         }
 
@@ -93,6 +102,11 @@ namespace PS_PrviDomaci_01
         private void dgDetalji_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgDetalji_Load_1(object sender, EventArgs e)
+        {
+            Init();
         }
     }
 }

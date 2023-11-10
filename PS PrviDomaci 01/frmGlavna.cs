@@ -21,5 +21,15 @@ namespace PS_PrviDomaci_01
         {
             new frmUnos().Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new frmPrikaz().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

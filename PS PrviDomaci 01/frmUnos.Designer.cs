@@ -115,7 +115,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUnos";
-            this.Text = "frmUnos";
+            this.Text = "Unos i izmena";
             this.Load += new System.EventHandler(this.frmUnos_Load_1);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrikaz)).EndInit();

@@ -32,7 +32,7 @@ namespace PS_PrviDomaci_01
             {
                 txtIme.Text = nastavnik.Ime;
                 txtPrezime.Text = nastavnik.Prezime;
-                cbZvanje.SelectedIndex = zvanja.IndexOf(nastavnik.Zvanje);
+                cbZvanje.SelectedIndex = zvanja.FindIndex(x=>x.Naziv==nastavnik.Zvanje.Naziv);
             }
             else
             {
